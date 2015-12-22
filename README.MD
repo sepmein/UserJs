@@ -50,11 +50,11 @@ return collection instance
 set collection instance
 ### login
 login function, return a Promise which will resolve the result of the login process.
-If match was found in the database, resolve `true`.
-If match was not found in the database, resolve `false`.
-if some errors occurred, reject this error.
+- If match was found in the database, resolve `true`.
+- If match was not found in the database, resolve `false`.
+- if some errors occurred, reject this error.
 ### register
 register function, return a Promise which will resolve the result of register process.
-If no user has been register, register it, resolve `true`.
-If some user has been registered, resolve `false`.
-if some errors occurred, reject this error.
+- If no user has been register, register it, resolve `true`.
+- If some user has been registered, resolve `false`.
+- if some errors occurred, reject this error.

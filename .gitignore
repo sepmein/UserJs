@@ -5,3 +5,6 @@
 
 # npm
 node_modules
+
+# vscode
+.vscode
