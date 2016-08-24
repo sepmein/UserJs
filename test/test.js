@@ -14,7 +14,7 @@ let db, user, collection;
 describe('UserJs', function () {
     before(function (done) {
         user = new User();
-        mongodb.connect('mongodb://localhost:27017/userJsTest')
+        mongodb.connect('mongodb://localhost:27017/test.userjs')
             .then(function (dbInstance) {
                 db = dbInstance;
                 collection = db.collection('user');
