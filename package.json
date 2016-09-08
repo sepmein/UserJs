@@ -1,11 +1,10 @@
 {
   "name": "userjs",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "user login register micro service",
   "main": "src/user.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
-    "release": "gulp build && npm publish"
+    "test": "mocha --compilers js:babel-core/register"
   },
   "keywords": [
     "node",
@@ -15,14 +14,9 @@
   "author": "sepmein@hotmail.com",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.3.21",
-    "chai": "^3.4.1",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^6.1.1",
-    "mongodb": "^2.0.52"
+    "chai": "^3.4.1"
   },
   "dependencies": {
-    "babel-preset-stage-3": "^6.3.13",
-    "babel-register": "^6.3.13"
+    "mongodb": "^2.0.52"
   }
 }

@@ -1,0 +1,4 @@
+{
+    "collection": "auth",
+    "port":"8080"
+}
