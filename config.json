@@ -1,4 +1,5 @@
 {
     "collection": "auth",
-    "port":"8080"
+    "port":"8080",
+    "secret":"-Scarlet*&"
 }

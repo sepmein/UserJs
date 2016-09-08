@@ -6,7 +6,7 @@ let app = require('koa')();
 const CONFIG = require('./config');
 let allowMethod = require('./middlewares/allowMethods');
 let parseBody = require('./middlewares/parseBody');
-let router = require('./router');
+let router = require('./lib/user.js');
 
 /* Create Koa Server */
 app.use(cors());
