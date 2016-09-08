@@ -17,6 +17,9 @@
     "chai": "^3.4.1"
   },
   "dependencies": {
-    "mongodb": "^2.0.52"
+    "koa": "^1.2.4",
+    "koa-cors": "^0.0.16",
+    "koa-router": "^5.4.0",
+    "mongodb": "^2.2.8"
   }
 }
