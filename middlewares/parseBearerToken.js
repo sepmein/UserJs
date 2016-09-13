@@ -1,10 +1,10 @@
 let jwt = require('jsonwebtoken');
-const secret = require('../config.json').secret;
-function * parseBearerToken (next){
+const secret = require('../config.js').secret;
+function* parseBearerToken(next) {
     try {
         var token = this.request.header.authorization.split(' ')[1];
         var verified = yield jwtVerifyPromise(token, secret);
-    } catch(e) {
+    } catch (e) {
         this.throw(403, 'invalid token');
     }
     this.state.token = verified;
@@ -12,8 +12,8 @@ function * parseBearerToken (next){
 }
 
 function jwtVerifyPromise(token, secret) {
-    return new Promise(function(resolve, reject){
-        jwt.verify(token, secret, function(err, decoded){
+    return new Promise(function (resolve, reject) {
+        jwt.verify(token, secret, function (err, decoded) {
             if (err || !decoded) {
                 reject(false);
             } else {

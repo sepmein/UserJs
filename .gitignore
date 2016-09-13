@@ -11,3 +11,6 @@ node_modules
 
 # npm publish
 src
+
+# config secret
+config.js
