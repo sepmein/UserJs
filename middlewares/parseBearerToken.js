@@ -1,23 +1,23 @@
 let jwt = require('jsonwebtoken');
 const secret = require('../config.json').secret;
 function * parseBearerToken (next){
-    let token = this.request.header.Authorization.split(' ')[1];
-    let verified = yield jwtVerifyPromise(token, secret);
-    if(verified){
-        this.context.token = verified;
-        yield next;
-    } else {
-        this.throw(403, 'token not verified, please relogin first');
-    }     
+    try {
+        var token = this.request.header.authorization.split(' ')[1];
+        var verified = yield jwtVerifyPromise(token, secret);
+    } catch(e) {
+        this.throw(403, 'invalid token');
+    }
+    this.state.token = verified;
+    yield next;
 }
 
 function jwtVerifyPromise(token, secret) {
     return new Promise(function(resolve, reject){
         jwt.verify(token, secret, function(err, decoded){
             if (err || !decoded) {
-                resolve(decoded);
-            } else {
                 reject(false);
+            } else {
+                resolve(decoded);
             }
         });
     });
