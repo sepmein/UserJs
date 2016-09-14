@@ -1,60 +1,51 @@
 # UserJS
-UserJS是一个实现用户相关功能的组件,需要与mongodb native驱动配合使用.
+##### Clean user account API server, just install and ready to go.
+##### Using Mongodb as database system and node.js as Backend.
 
-#### require
-mongodb native driver > 2.0
-node > 5.0.0
+#### **FEATURES**
+* Rest API
+* Security: Bcrypt as hash for password storage and json web token as authentication system.
+* Forgot and reset password function, using nodemailer to send reset email.
+* 
 
-### get started
-首先安装mongodb native driver.
+### **GET STARTED**
+
+0. Enviroment Setup
+
+Just install `Node.js` and `MongoDb` first.
+
+1. Installation
+
 ```bash
 npm install userjs
 ```
 
+2. Configuration
+
+Rename `config-example.js` to `config.js`
+Example:
 ```javascript
-//require lib
-let User = require('userjs');
-let user = new User();
-//set connection
-const mongodb = require('mongodb');
-mongodb.connect('mongodb://localhost:27017/userjs')
-    .then(function (db) {
-        // set collection reference using set collection function
-        user.collection = db.collection('user');
-        //register function
-        user.register({
-            email: "test@test.com",
-            password: "test"
-            }).then((result) => {
-                console.log(result);
-                //true
-            });
-        //login function
-        user.login({
-            email: "test@test.com",
-            password: "test"
-            }).then((result) => {
-                console.log(result);
-                //true
-            });
-    })
-    .catch(function (error) {
-        throw(error);
-    });
+/**
+ * Configuration
+ */
+module.exports = {
+    'site': 'localhost',                            //site address for the mail system to generate reset link
+    'collection': 'authentication',                 //MongoDb collection name for the data storage
+    'port': '8080',                                 //site port
+    'secret': '12345678',                           //secret string for jsonwebtoken generating token 
+    mail: {                                         //mail configuration
+        from: '"张春哲" <zhangchunzhe@scdc.sh.cn>',  //sender address  
+        host: 'smtp-mail.outlook.com',              //host mail smtp address
+        user: 'user@mail.com',                      //smtp server login username
+        pass: '12345678'                            //smtp server login password
+    }
+};
 ```
-## functions
-### get collection
-get collection instance
-return collection instance
-### set collection
-set collection instance
-### login
-login function, return a Promise which will resolve the result of the login process.
-- If match was found in the database, resolve `true`.
-- If match was not found in the database, resolve `false`.
-- if some errors occurred, reject this error.
-### register
-register function, return a Promise which will resolve the result of register process.
-- If no user has been register, register it, resolve `true`.
-- If some user has been registered, resolve `false`.
-- if some errors occurred, reject this error.
+## **API**
+
+### Login
+login api, send plain json email and password.
+return token if match.
+
+### Register
+register api
