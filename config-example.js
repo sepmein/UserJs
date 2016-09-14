@@ -7,9 +7,9 @@ module.exports = {
     'port': '8080',
     'secret': '12345678',
     mail: {
-        sender: 'user@mail',
-        provider: 'Hotmail',
+        from: '"张春哲" <zhangchunzhe@scdc.sh.cn>',
+        host: 'smtp-mail.outlook.com',
         user: 'user@mail.com',
-        password: '12345678'
+        pass: '12345678'
     }
 };
