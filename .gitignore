@@ -15,5 +15,6 @@ src
 # config secret
 config.js
 
-#pnpm
+#npm
 pnpm-debug.log
+npm-debug.log
