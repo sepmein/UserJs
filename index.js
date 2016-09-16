@@ -5,7 +5,7 @@ const cors = require('koa-cors');
 let app = require('koa')();
 
 // local lib
-let allowMethod = require('./middlewares/allowMethods');
+let allowMethod = require('koa-allow-methods');
 let parseBody = require('./middlewares/parseBody');
 let router = require('./lib/user.js');
 
