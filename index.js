@@ -9,7 +9,6 @@ let allowMethod = require('./middlewares/allowMethods');
 let parseBody = require('./middlewares/parseBody');
 let router = require('./lib/user.js');
 
-
 // Create Koa Server
 app.use(cors());
 app.use(allowMethod(['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS']));
@@ -24,6 +23,7 @@ function server(config) {
         if (err) {
             app.throw(500);
         }
+        app.context.CONFIGURATION = CONFIG;
         app.context.db = db;
         app.context.collection = db.collection(CONFIG.collection);
         app.listen(CONFIG.port);
