@@ -1,6 +1,6 @@
 let jwt = require('jsonwebtoken');
-const secret = require('../config.js').secret;
 function* parseBearerToken(next) {
+    let secret = this.CONFIGURATION.secret;
     try {
         var token = this.request.header.authorization.split(' ')[1];
         var verified = yield jwtVerifyPromise(token, secret);
