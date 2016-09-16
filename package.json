@@ -27,6 +27,7 @@
     "jsonwebtoken": "^7.1.9",
     "koa": "^1.2.4",
     "koa-cors": "^0.0.16",
+    "koa-parse-bearer-token": "^0.1.0",
     "koa-router": "^5.4.0",
     "mongodb": "^2.2.8",
     "nodemailer": "^2.6.0"
