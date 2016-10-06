@@ -15,10 +15,10 @@ app.use(parseBody);
 app.use(router.routes());
 
 Mongo.connect('mongodb://localhost:27017/' + CONFIG.collection, (err, db) => {
-    if (err) {
-        app.throw(500);
-    }
-    app.context.db = db;
-    app.context.collection = db.collection(CONFIG.collection);
-    app.listen(CONFIG.port);
+  if (err) {
+    app.throw(500);
+  }
+  app.context.db = db;
+  app.context.collection = db.collection(CONFIG.collection);
+  app.listen(CONFIG.port);
 });
