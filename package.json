@@ -1,11 +1,12 @@
 {
   "name": "userjs",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "user login register micro service",
   "repository": "https://github.com/sepmein/userjs.git",
-  "main": "src/user.js",
+  "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register"
+    "test": "mocha --compilers js:babel-core/register",
+    "serve": "node server.js"
   },
   "keywords": [
     "node",
@@ -25,7 +26,9 @@
     "is-js": "^0.1.1",
     "jsonwebtoken": "^7.1.9",
     "koa": "^1.2.4",
+    "koa-allow-methods": "^0.1.0",
     "koa-cors": "^0.0.16",
+    "koa-parse-bearer-token": "^0.1.0",
     "koa-router": "^5.4.0",
     "mongodb": "^2.2.8",
     "nodemailer": "^2.6.0"
