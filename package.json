@@ -1,6 +1,6 @@
 {
   "name": "userjs",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "user login register micro service",
   "repository": "https://github.com/sepmein/userjs.git",
   "main": "index.js",
