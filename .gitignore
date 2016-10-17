@@ -18,3 +18,5 @@ config.js
 #npm
 pnpm-debug.log
 npm-debug.log
+
+.DS_store
