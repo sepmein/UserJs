@@ -14,20 +14,23 @@ app.use(cors());
 app.use(allowMethod(['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS']));
 app.use(parseBody);
 app.use(router.routes());
-
+/**
+ * Start a new Auth Server
+ * @param {JSON} config - configuration of Auth Server
+ */
 function server(config) {
     // configuration
-    const CONFIG = config || require('./config');
+  const CONFIG = config || require('./config');
 
-    Mongo.connect('mongodb://localhost:27017/' + CONFIG.collection, (err, db) => {
-        if (err) {
-            app.throw(500);
-        }
-        app.context.CONFIGURATION = CONFIG;
-        app.context.db = db;
-        app.context.collection = db.collection(CONFIG.collection);
-        app.listen(CONFIG.port);
-    });
+  Mongo.connect('mongodb://localhost:27017/' + CONFIG.collection, (err, db) => {
+    if (err) {
+      app.throw(500);
+    }
+    app.context.CONFIGURATION = CONFIG;
+    app.context.db = db;
+    app.context.collection = db.collection(CONFIG.collection);
+    app.listen(CONFIG.port);
+  });
 }
 
 module.exports = server;
