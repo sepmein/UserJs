@@ -24,7 +24,7 @@ function server(config) {
 
   Mongo.connect('mongodb://localhost:27017/' + CONFIG.collection, (err, db) => {
     if (err) {
-      app.throw(500);
+      throw err;
     }
     app.context.CONFIGURATION = CONFIG;
     app.context.db = db;
