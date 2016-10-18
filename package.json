@@ -1,13 +1,13 @@
 {
   "name": "userjs",
-  "version": "0.7.5",
+  "version": "0.8.0",
   "description": "user login register micro service",
   "repository": "https://github.com/sepmein/userjs.git",
   "main": "index.js",
   "scripts": {
+  },
     "test": "mocha --compilers js:babel-core/register",
     "serve": "node server.js"
-  },
   "keywords": [
     "node",
     "user",
